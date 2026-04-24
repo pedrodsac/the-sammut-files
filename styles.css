@@ -31,6 +31,113 @@ body.viewer-open {
   overflow: hidden;
 }
 
+body.locked {
+  overflow: hidden;
+}
+
+.page-shell {
+  min-height: 100vh;
+}
+
+body.locked .page-shell {
+  visibility: hidden;
+}
+
+.lock-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background:
+    radial-gradient(circle at top, rgba(196, 168, 120, 0.2), transparent 28rem),
+    linear-gradient(180deg, rgba(12, 13, 16, 0.98), rgba(8, 9, 11, 0.98));
+}
+
+.lock-panel {
+  width: min(100%, 28rem);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--border);
+  border-radius: 1.75rem;
+  background: rgba(20, 21, 25, 0.94);
+  box-shadow: var(--shadow);
+}
+
+.lock-kicker {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.lock-panel h1 {
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.lock-copy {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.unlock-form {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.unlock-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.unlock-input,
+.unlock-button {
+  width: 100%;
+  border-radius: 999px;
+  font: inherit;
+}
+
+.unlock-input {
+  padding: 0.95rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(8, 9, 11, 0.9);
+  color: var(--text);
+}
+
+.unlock-input:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: 3px;
+}
+
+.unlock-button {
+  padding: 0.95rem 1.1rem;
+  border: 1px solid rgba(196, 168, 120, 0.3);
+  background: linear-gradient(180deg, rgba(196, 168, 120, 0.22), rgba(123, 96, 58, 0.22));
+  color: var(--text);
+  cursor: pointer;
+}
+
+.unlock-button:hover,
+.unlock-button:focus-visible {
+  border-color: rgba(196, 168, 120, 0.5);
+  background: linear-gradient(180deg, rgba(196, 168, 120, 0.32), rgba(123, 96, 58, 0.3));
+}
+
+.unlock-error {
+  min-height: 1.25rem;
+  margin: 0;
+  color: #ffb6a3;
+}
+
 .page {
   padding-block: 3rem 4rem;
 }

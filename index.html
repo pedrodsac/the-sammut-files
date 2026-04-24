@@ -6,95 +6,139 @@
     <title>The Sammut Files</title>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
-    <main class="page">
-      <header class="hero">
-        <h1>The Sammut Files</h1>
-      </header>
-
-      <section class="gallery-shell" aria-label="Media gallery">
-        <div class="gallery-grid">
-          <button class="gallery-item" type="button" data-type="image" data-src="resources/IMG_011.webp" data-alt="IMG 011">
-            <img src="resources/IMG_011.webp" alt="IMG 011">
-          </button>
-
-          <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_001.webm" data-label="VID 001">
-            <img src="resources/VID_001-thumb.jpg" alt="VID 001 thumbnail">
-            <span class="play-icon" aria-hidden="true"></span>
-            <span class="item-badge">Video</span>
-          </button>
-
-          <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_002.webm" data-label="VID 002">
-            <img src="resources/VID_002-thumb.jpg" alt="VID 002 thumbnail">
-            <span class="play-icon" aria-hidden="true"></span>
-            <span class="item-badge">Video</span>
-          </button>
-
-          <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_003.webm" data-label="VID 003">
-            <img src="resources/VID_003-thumb.jpg" alt="VID 003 thumbnail">
-            <span class="play-icon" aria-hidden="true"></span>
-            <span class="item-badge">Video</span>
-          </button>
-
-          <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_004.webm" data-label="VID 004">
-            <img src="resources/VID_004-thumb.jpg" alt="VID 004 thumbnail">
-            <span class="play-icon" aria-hidden="true"></span>
-            <span class="item-badge">Video</span>
-          </button>
-
-          <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_005.webm" data-label="VID 005">
-            <img src="resources/VID_005-thumb.jpg" alt="VID 005 thumbnail">
-            <span class="play-icon" aria-hidden="true"></span>
-            <span class="item-badge">Video</span>
-          </button>
-
-          <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_006.webm" data-label="VID 006">
-            <img src="resources/VID_006-thumb.jpg" alt="VID 006 thumbnail">
-            <span class="play-icon" aria-hidden="true"></span>
-            <span class="item-badge">Video</span>
-          </button>
-
-          <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_007.webm" data-label="VID 007">
-            <img src="resources/VID_007-thumb.jpg" alt="VID 007 thumbnail">
-            <span class="play-icon" aria-hidden="true"></span>
-            <span class="item-badge">Video</span>
-          </button>
-
-          <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_008.webm" data-label="VID 008">
-            <img src="resources/VID_008-thumb.jpg" alt="VID 008 thumbnail">
-            <span class="play-icon" aria-hidden="true"></span>
-            <span class="item-badge">Video</span>
-          </button>
-
-          <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_009.webm" data-label="VID 009">
-            <img src="resources/VID_009-thumb.jpg" alt="VID 009 thumbnail">
-            <span class="play-icon" aria-hidden="true"></span>
-            <span class="item-badge">Video</span>
-          </button>
-
-          <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_010.webm" data-label="VID 010">
-            <img src="resources/VID_010-thumb.jpg" alt="VID 010 thumbnail">
-            <span class="play-icon" aria-hidden="true"></span>
-            <span class="item-badge">Video</span>
-          </button>
-        </div>
-      </section>
-    </main>
-
-    <dialog class="viewer" aria-label="Media viewer">
-      <button class="viewer-close" type="button" aria-label="Close viewer">X</button>
-      <div class="viewer-sheet">
-        <div class="viewer-media"></div>
+  <body class="locked">
+    <section class="lock-screen" aria-labelledby="unlock-title" data-lock-screen>
+      <div class="lock-panel">
+        <p class="lock-kicker">Restricted Access</p>
+        <h1 id="unlock-title">The Sammut Files</h1>
+        <p class="lock-copy">Enter the password to view the gallery.</p>
+        <form class="unlock-form" novalidate>
+          <label class="unlock-label" for="site-password">Password</label>
+          <input class="unlock-input" id="site-password" name="password" type="password" autocomplete="current-password" required>
+          <button class="unlock-button" type="submit">Unlock</button>
+          <p class="unlock-error" role="alert" aria-live="polite"></p>
+        </form>
       </div>
-    </dialog>
+    </section>
+
+    <div class="page-shell" aria-hidden="true" data-page-shell>
+      <main class="page">
+        <header class="hero">
+          <h1>The Sammut Files</h1>
+        </header>
+
+        <section class="gallery-shell" aria-label="Media gallery">
+          <div class="gallery-grid">
+            <button class="gallery-item" type="button" data-type="image" data-src="resources/IMG_011.webp" data-alt="IMG 011">
+              <img src="resources/IMG_011.webp" alt="IMG 011">
+            </button>
+
+            <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_001.webm" data-label="VID 001">
+              <img src="resources/VID_001-thumb.jpg" alt="VID 001 thumbnail">
+              <span class="play-icon" aria-hidden="true"></span>
+              <span class="item-badge">Video</span>
+            </button>
+
+            <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_002.webm" data-label="VID 002">
+              <img src="resources/VID_002-thumb.jpg" alt="VID 002 thumbnail">
+              <span class="play-icon" aria-hidden="true"></span>
+              <span class="item-badge">Video</span>
+            </button>
+
+            <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_003.webm" data-label="VID 003">
+              <img src="resources/VID_003-thumb.jpg" alt="VID 003 thumbnail">
+              <span class="play-icon" aria-hidden="true"></span>
+              <span class="item-badge">Video</span>
+            </button>
+
+            <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_004.webm" data-label="VID 004">
+              <img src="resources/VID_004-thumb.jpg" alt="VID 004 thumbnail">
+              <span class="play-icon" aria-hidden="true"></span>
+              <span class="item-badge">Video</span>
+            </button>
+
+            <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_005.webm" data-label="VID 005">
+              <img src="resources/VID_005-thumb.jpg" alt="VID 005 thumbnail">
+              <span class="play-icon" aria-hidden="true"></span>
+              <span class="item-badge">Video</span>
+            </button>
+
+            <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_006.webm" data-label="VID 006">
+              <img src="resources/VID_006-thumb.jpg" alt="VID 006 thumbnail">
+              <span class="play-icon" aria-hidden="true"></span>
+              <span class="item-badge">Video</span>
+            </button>
+
+            <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_007.webm" data-label="VID 007">
+              <img src="resources/VID_007-thumb.jpg" alt="VID 007 thumbnail">
+              <span class="play-icon" aria-hidden="true"></span>
+              <span class="item-badge">Video</span>
+            </button>
+
+            <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_008.webm" data-label="VID 008">
+              <img src="resources/VID_008-thumb.jpg" alt="VID 008 thumbnail">
+              <span class="play-icon" aria-hidden="true"></span>
+              <span class="item-badge">Video</span>
+            </button>
+
+            <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_009.webm" data-label="VID 009">
+              <img src="resources/VID_009-thumb.jpg" alt="VID 009 thumbnail">
+              <span class="play-icon" aria-hidden="true"></span>
+              <span class="item-badge">Video</span>
+            </button>
+
+            <button class="gallery-item" type="button" data-type="video" data-src="resources/VID_010.webm" data-label="VID 010">
+              <img src="resources/VID_010-thumb.jpg" alt="VID 010 thumbnail">
+              <span class="play-icon" aria-hidden="true"></span>
+              <span class="item-badge">Video</span>
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <dialog class="viewer" aria-label="Media viewer">
+        <button class="viewer-close" type="button" aria-label="Close viewer">X</button>
+        <div class="viewer-sheet">
+          <div class="viewer-media"></div>
+        </div>
+      </dialog>
+    </div>
 
     <script>
+      const PASSWORD = "bwoineedwatah";
+      const STORAGE_KEY = "sammut-files-unlocked";
+      const pageShell = document.querySelector("[data-page-shell]");
+      const lockScreen = document.querySelector("[data-lock-screen]");
+      const unlockForm = document.querySelector(".unlock-form");
+      const passwordInput = document.querySelector("#site-password");
+      const unlockError = document.querySelector(".unlock-error");
       const viewer = document.querySelector(".viewer");
       const viewerMedia = document.querySelector(".viewer-media");
       const closeButton = document.querySelector(".viewer-close");
       const galleryItems = document.querySelectorAll(".gallery-item");
 
+      const unlockPage = () => {
+        document.body.classList.remove("locked");
+        pageShell.removeAttribute("aria-hidden");
+        pageShell.inert = false;
+        lockScreen.hidden = true;
+        lockScreen.inert = true;
+        sessionStorage.setItem(STORAGE_KEY, "true");
+      };
+
+      const lockPage = () => {
+        document.body.classList.add("locked");
+        pageShell.setAttribute("aria-hidden", "true");
+        pageShell.inert = true;
+        lockScreen.hidden = false;
+        lockScreen.inert = false;
+      };
+
       const openViewer = (item) => {
+        if (document.body.classList.contains("locked")) {
+          return;
+        }
+
         const type = item.dataset.type;
         const src = item.dataset.src;
         const label = item.dataset.label || item.dataset.alt || "Media item";
@@ -140,6 +184,20 @@
         document.body.classList.remove("viewer-open");
       };
 
+      unlockForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (passwordInput.value === PASSWORD) {
+          unlockError.textContent = "";
+          unlockPage();
+          passwordInput.value = "";
+          return;
+        }
+
+        unlockError.textContent = "Incorrect password.";
+        passwordInput.select();
+      });
+
       galleryItems.forEach((item) => {
         item.addEventListener("click", () => openViewer(item));
       });
@@ -162,6 +220,13 @@
           closeViewer();
         }
       });
+
+      if (sessionStorage.getItem(STORAGE_KEY) === "true") {
+        unlockPage();
+      } else {
+        lockPage();
+        passwordInput.focus();
+      }
     </script>
   </body>
 </html>
