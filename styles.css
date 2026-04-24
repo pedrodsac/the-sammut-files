@@ -57,6 +57,10 @@ body.locked .page-shell {
     linear-gradient(180deg, rgba(12, 13, 16, 0.98), rgba(8, 9, 11, 0.98));
 }
 
+.lock-screen[hidden] {
+  display: none;
+}
+
 .lock-panel {
   width: min(100%, 28rem);
   padding: clamp(1.5rem, 4vw, 2.5rem);

@@ -106,7 +106,6 @@
 
     <script>
       const PASSWORD = "bwoineedwatah";
-      const STORAGE_KEY = "sammut-files-unlocked";
       const pageShell = document.querySelector("[data-page-shell]");
       const lockScreen = document.querySelector("[data-lock-screen]");
       const unlockForm = document.querySelector(".unlock-form");
@@ -123,7 +122,6 @@
         pageShell.inert = false;
         lockScreen.hidden = true;
         lockScreen.inert = true;
-        sessionStorage.setItem(STORAGE_KEY, "true");
       };
 
       const lockPage = () => {
@@ -245,12 +243,9 @@
         }
       });
 
-      if (sessionStorage.getItem(STORAGE_KEY) === "true") {
-        unlockPage();
-      } else {
-        lockPage();
-        passwordInput.focus();
-      }
+      sessionStorage.removeItem("sammut-files-unlocked");
+      lockPage();
+      passwordInput.focus();
     </script>
   </body>
 </html>
