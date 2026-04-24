@@ -41,6 +41,7 @@ body.locked {
 
 body.locked .page-shell {
   visibility: hidden;
+  pointer-events: none;
 }
 
 .lock-screen {
@@ -50,6 +51,7 @@ body.locked .page-shell {
   display: grid;
   place-items: center;
   padding: 1.5rem;
+  pointer-events: auto;
   background:
     radial-gradient(circle at top, rgba(196, 168, 120, 0.2), transparent 28rem),
     linear-gradient(180deg, rgba(12, 13, 16, 0.98), rgba(8, 9, 11, 0.98));

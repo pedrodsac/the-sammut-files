@@ -21,7 +21,7 @@
       </div>
     </section>
 
-    <div class="page-shell" aria-hidden="true" data-page-shell>
+    <div class="page-shell" aria-hidden="true" inert data-page-shell>
       <main class="page">
         <header class="hero">
           <h1>The Sammut Files</h1>
@@ -127,6 +127,7 @@
       };
 
       const lockPage = () => {
+        closeViewer();
         document.body.classList.add("locked");
         pageShell.setAttribute("aria-hidden", "true");
         pageShell.inert = true;
@@ -172,6 +173,12 @@
       };
 
       const closeViewer = () => {
+        if (!viewer.open) {
+          viewerMedia.innerHTML = "";
+          document.body.classList.remove("viewer-open");
+          return;
+        }
+
         const activeVideo = viewerMedia.querySelector("video");
         if (activeVideo) {
           activeVideo.pause();
@@ -182,6 +189,19 @@
         viewer.close();
         viewerMedia.innerHTML = "";
         document.body.classList.remove("viewer-open");
+      };
+
+      const preventLockedBackgroundInteraction = (event) => {
+        if (!document.body.classList.contains("locked")) {
+          return;
+        }
+
+        if (event.target instanceof Node && lockScreen.contains(event.target)) {
+          return;
+        }
+
+        event.preventDefault();
+        event.stopImmediatePropagation();
       };
 
       unlockForm.addEventListener("submit", (event) => {
@@ -203,6 +223,10 @@
       });
 
       closeButton.addEventListener("click", closeViewer);
+
+      ["pointerdown", "click", "touchstart"].forEach((eventName) => {
+        document.addEventListener(eventName, preventLockedBackgroundInteraction, true);
+      });
 
       viewer.addEventListener("click", (event) => {
         if (event.target === viewer) {
